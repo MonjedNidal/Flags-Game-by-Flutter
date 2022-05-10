@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:fluttertoast/fluttertoast.dart';
 //import 'result_screen.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
 //to count true answers and false answers to pass them to the resault screen
 var trueAnswers = 0;
@@ -50,16 +49,16 @@ class _QuizScreenState extends State<QuizScreen> {
     countries.shuffle();
   }
 
-  Future trueAlert() async {
-    if (trueAnswers == 5 && falseAnswers == 0) {
-      return Alert(context: context, title: "True", desc: "Flutter is awesome.")
-          .show();
-    } else if (trueAnswers == 0 && falseAnswers == 5) {
-      return Alert(
-              context: context, title: "False", desc: "Flutter is awesome.")
-          .show();
-    }
-  }
+  // Future trueAlert() async {
+  //   if (trueAnswers == 5 && falseAnswers == 0) {
+  //     return Alert(context: context, title: "True", desc: "Flutter is awesome.")
+  //         .show();
+  //   } else if (trueAnswers == 0 && falseAnswers == 5) {
+  //     return Alert(
+  //             context: context, title: "False", desc: "Flutter is awesome.")
+  //         .show();
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +108,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       );
                     }
                     setState(() {
-                      trueAlert();
+                      // trueAlert();
                       countries.shuffle();
                       counter = Random().nextInt(3);
                     });
